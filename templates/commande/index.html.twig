@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!
+{% endblock %}
+
+{% block body %}
+	paimement{{id_session}}
+	<script>
+		(function () {
+const stripe = Stripe('pk_test_51MrH65Ak5kzXl65thXKg7FTXuQBGXHaoyromo3YKINFCwSNEg7Wq71VHF15QphFNvDi0iEee2q0dBhn1Hp2yB1Gu008aS1KFu4');
+stripe.redirectToCheckout({sessionId: "{{ id_session }}"});
+})();
+	</script>
+
+{% endblock %}
